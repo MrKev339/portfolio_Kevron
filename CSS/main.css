@@ -1,0 +1,127 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fcfcf9;
+    color: #334155;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    max-height: 300px;
+}
+
+@media (min-width: 768px) {
+    .chart-container {
+        height: 300px;
+        max-height: 350px;
+    }
+}
+
+.modal {
+    transition: opacity 0.25s ease;
+}
+
+.modal-content {
+    transition: all 0.25s ease;
+}
+
+
+/* 1. SECTION FADE-IN ANIMATION */
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-section-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-section-in.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* 2. GLOSSY BUTTON SHINE */
+
+@keyframes shine {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.shine-effect {
+    /* Base background for the gloss */
+    background: linear-gradient(110deg, #FFFFFF, #fcfcf9 20%, #FFFFFF 40%, #fcfcf9 60%, #FFFFFF 80%);
+    background-size: 200% 100%;
+    animation: shine 1.5s infinite linear;
+}
+
+
+/* 4. GLOSSY TEXT ANIMATION */
+
+.text-shine-effect {
+    display: inline-block;
+    /* Ensures the gradient spans the text correctly */
+    background: linear-gradient(110deg, #0d9488 45%, #14b8a6 50%, #0d9488 55%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 5s infinite linear;
+    /* Slower animation for a more subtle effect */
+}
+
+
+/* 3. HERO IMAGE FLOATING PULSE */
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.float-animation {
+    animation: float 4s ease-in-out infinite;
+}
+
+
+/* 5. HERO BACKGROUND ANIMATION */
+
+@keyframes animatedGrid {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100px 100px;
+    }
+}
+
+.hero-background-animation {
+    background-color: #fcfcf9;
+    background-image: linear-gradient(rgba(13, 148, 136, 0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(13, 148, 136, 0.07) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: animatedGrid 4s linear infinite;
+}
